@@ -1,0 +1,17 @@
+
+.dropdownCloseBtn {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    border: none;
+    background: none;
+    color: #d1c296;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.listLinks {
+    padding: .5rem;
+    border-bottom: 1px solid hsl(0, 0%, 75%);
+    color: #d1c296;
+}
