@@ -7,11 +7,11 @@ import './navbar.css'
 
 
 
-const Navbar = () => {
+const Navbar = ({openSidebar, setOpenSidebar}) => {
 
     const ref = useRef()
 
-    const [openSidebar, setOpenSidebar] = useState(false)
+    // const [openSidebar, setOpenSidebar] = useState(false)
 
     const handleSidebar = e => {
         //toggle is Active State on click
@@ -37,19 +37,15 @@ const Navbar = () => {
 
 
     return (
-        <nav className='navBody'>
-
-            <div className='navLogo' aria-label="menu" onClick={handleSidebar}>
-                <Logo />
-            </div>
+        <>
+            <button className={openSidebar ? 'logoBtn-Close' : 'logoBtn'} onClick={handleSidebar} aria-label="open menu"><Logo /></button>
 
             <div className={openSidebar ? 'slideOutMenu-Open' : 'slideOutMenu'} ref={ref}>
-                <DropdownMenu 
-                handleSidebar={handleSidebar}
+                <DropdownMenu
+                    handleSidebar={handleSidebar}
                 />
             </div>
-
-        </nav>
+        </>
     )
 }
 

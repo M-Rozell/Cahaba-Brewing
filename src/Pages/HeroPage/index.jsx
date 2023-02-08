@@ -1,21 +1,24 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import './hero.css'
 import Navbar from '../../components/Navbar';
 
 
 const Landing = () => {
+
+  const [openSidebar, setOpenSidebar] = useState(false)
+
   return (
     <>
       <header>
         <nav>
-          <Navbar />
+          <Navbar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar}/>
         </nav>
       </header>
       
-      <main>
+      <main className={openSidebar ? 'hidePage' : 'showPage'}>
 
-        <section>
+        <section className='mainSection'>
           <h1 className='cahabaTitleLanding'>Cahaba Brewing</h1>
         </section>
 
